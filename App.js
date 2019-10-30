@@ -29,9 +29,9 @@ import {
 import Slider from '@react-native-community/slider';
 
 const App: () => React$Node = () => {
-  const [pauseDuration, setPauseDuration] = useState(400);
-  const [vibrationDuration, setVibrationDuration] = useState(300);
-  const [isRunning, setIsRunning] = useState(false);
+  let [pauseDuration, setPauseDuration] = useState(400);
+  let [vibrationDuration, setVibrationDuration] = useState(300);
+  let [isRunning, setIsRunning] = useState(false);
 
   const restartVibration = optionalIsTrue => {
     if (isRunning || optionalIsTrue === true) {
@@ -63,6 +63,7 @@ const App: () => React$Node = () => {
             minimumTrackTintColor="#000000"
             maximumTrackTintColor="#000000"
             onSlidingComplete={val => {
+              pauseDuration = Math.floor(val);
               setPauseDuration(Math.floor(val));
               restartVibration();
             }}
@@ -76,6 +77,7 @@ const App: () => React$Node = () => {
             minimumTrackTintColor="#000000"
             maximumTrackTintColor="#000000"
             onSlidingComplete={val => {
+              vibrationDuration = Math.floor(val);
               setVibrationDuration(Math.floor(val));
               restartVibration();
             }}
@@ -102,7 +104,9 @@ const App: () => React$Node = () => {
           />
         </View>
         <View style={styles.bottom}>
-          <Text style={styles.bottomText}>Copyright 2019 Concord Software</Text>
+          <Text style={styles.bottomText}>
+            Copyright 2019 Concord Software v1.1
+          </Text>
           <Text style={styles.bottomText}>cmaloney2007@gmail.com</Text>
         </View>
       </View>
