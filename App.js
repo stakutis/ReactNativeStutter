@@ -1,6 +1,5 @@
 /**
- * Sample React Native App
- * https://github.com/facebook/react-native
+ * Sample/simple ReactNative app implementing the Malone melodict therapy technque
  *
  * @format
  * @flow
@@ -82,7 +81,7 @@ const App: () => React$Node = () => {
               restartVibration();
             }}
           />
-          <Text></Text>
+          <Text />
           <Button
             style={styles.separate}
             onPress={() => {
