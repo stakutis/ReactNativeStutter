@@ -36,7 +36,7 @@ export default function App() {
           justifyContent: "center",
         }}
       >
-        <Text>Hi there</Text>
+        <Text>Hi there Krissy!</Text>
         <Text>Hi there</Text>
       </View>
       <View
